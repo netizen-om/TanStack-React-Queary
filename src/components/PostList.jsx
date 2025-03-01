@@ -15,10 +15,11 @@ function PostList() {
         mutationFn: addPost,
         onMutate : () => {
             return {id : 1}
-        }
+        },
         onSuccess : (data, variable, context) => {
             quearyClient.invalidateQueries({
-                queryKey : ["posts"]
+                queryKey : ["posts"],
+                exact : ture
             })
         }
     })
