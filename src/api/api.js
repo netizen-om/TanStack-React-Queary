@@ -3,7 +3,7 @@ const fetchPosts = async (page) => {
       `http://localhost:3000/posts?_sort=-id&${
         page ? `_page=${page}&_per_page=5` : ""
       }`
-    );
+    );  
   
     if (!response.ok) {
       throw new Error(`Failed to fetch posts. Status: ${response.status}`);

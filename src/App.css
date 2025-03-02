@@ -67,3 +67,40 @@ body {
     gap: 10px;
     align-items: center;
   }
+
+.button {
+    background-color: rgba(0, 0, 0, 0.799);
+    color: white;
+    padding: 10px 20px; /* Adjust padding for size */
+    margin: 10px; /* Adds spacing around the button */
+    border: none;
+    border-radius: 5px; /* Slightly rounded corners */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0a0a0aa5; /* Darker shade on hover */
+}
+
+.pagination button {
+  background-color: rgba(0, 0, 0, 0.799);
+  color: white;
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #0a0a0aa5;
+}
+
+.pagination span {
+  font-size: 16px;
+  font-weight: bold;
+}

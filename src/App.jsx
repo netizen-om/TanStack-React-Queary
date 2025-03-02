@@ -11,7 +11,7 @@ function App() {
   return <div>
     
   <h2 className='title'>My Posts</h2>
-  <button onClick={() => setToggle(!toggle)}> Toggle List </button>
+  <button className="button" onClick={() => setToggle(!toggle)}> Toggle List </button>
   {  toggle && <PostList />}
     
     
