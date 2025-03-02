@@ -21,7 +21,9 @@ function PostList() {
                 queryKey : ["posts"],
                 exact : ture
             })
-        }
+        },
+        onError : (error, variable, context) => {},
+        onSettled : (data, error, variable, context) => {}
     })
 
     const { data:tagsData } = useQuery({
@@ -68,8 +70,9 @@ function PostList() {
         <button>Post</button>
     </form>
 
-    {isLoading && <p>Loading.......</p>}
+    {(isLoading || isPending) && <p>Loading.......</p>}
         {isError && <p>{error?.message}</p>}
+        {isPostError && <p onClick={() => reset()}>Unable to post</p>}
 
             {postData?.map((post) => {
                 return <div key={post.id} className='post'>
