@@ -8,7 +8,9 @@ function PostList() {
 
     const {data:postData ,isError, error , isLoading} = useQuery({
         queryKey : ["posts"],
-        queryFn : fetchPosts
+        queryFn : fetchPosts,
+        // gcTime : 0,
+        // refetchInterval : 5 * 1000,
     });
 
     const { mutate, isError: isPostError, isPending, reset } = useMutation({
@@ -32,7 +34,9 @@ function PostList() {
 
     const { data:tagsData } = useQuery({
         queryKey : ["tags"],
-        queryFn : fetchTags
+        queryFn : fetchTags,
+        staleTime : Infinity
+        // this will cache all tags forever
     })
 
     const HandleSubmit = async(e) => {
