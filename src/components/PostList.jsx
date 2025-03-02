@@ -19,10 +19,14 @@ function PostList() {
         onSuccess : (data, variable, context) => {
             quearyClient.invalidateQueries({
                 queryKey : ["posts"],
-                exact : ture
+                exact : true
             })
         },
-        onError : (error, variable, context) => {},
+        onError : (error, variable, context) => {
+            console.log("error : " + error);
+            console.log("error : " + variable);
+            
+        },
         onSettled : (data, error, variable, context) => {}
     })
 
